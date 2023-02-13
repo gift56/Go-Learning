@@ -12,5 +12,6 @@ func main() {
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
 		return c.SendString("OK")
 	})
+	app.Listen(":4000")
 
 }
