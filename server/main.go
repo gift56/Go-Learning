@@ -34,7 +34,7 @@ func main() {
 	app.Patch("/api/todos/:id/done", func(c *fiber.Ctx) error {
 		id, err := c.ParamsInt("id")
 if err:=nil{
-	return err
+	return c.Status(401).SendString("Invalid id")
 }
 	})
 	log.Fatal(app.Listen(":4000"))
