@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
-import { Modal, Group, Button,TextInput } from "@mantine/core";
+import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core";
 
 const CreateTodo = () => {
   const [open, setOpen] = useState(false);
@@ -17,6 +17,7 @@ const CreateTodo = () => {
       <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo">
         <form>
           <TextInput />
+          <Textarea />
         </form>
       </Modal>
       <Group position="center">
