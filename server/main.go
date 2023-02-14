@@ -8,21 +8,21 @@ import (
 )
 
 type Todo struct {
-	ID int `json:"id"`
+	ID    int    `json:"id"`
 	Title string `json:"title"`
-	Done bool `json:"done"`
-	Body int `json:"body"`
+	Done  bool   `json:"done"`
+	Body  int    `json:"body"`
 }
 
 func main() {
 	fmt.Println("Hello world")
 	app := fiber.New()
-	todos:=[]Todo{}
+	todos := []Todo{}
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
 		return c.SendString("OK")
 	})
-	app.Post("/api/todos",func(c *fiber.Ctx) error {
-		
+	app.Post("/api/todos", func(c *fiber.Ctx) error {
+		todo := &Todo{}
 	})
 	log.Fatal(app.Listen(":4000"))
 
