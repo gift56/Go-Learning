@@ -19,7 +19,7 @@ const CreateTodo = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: values,
+      body: JSON.stringify(values),
     });
   };
 
