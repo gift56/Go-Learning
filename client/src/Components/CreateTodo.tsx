@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
 import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core";
+import { ENDPOINT } from "../App";
 
 const CreateTodo = () => {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,9 @@ const CreateTodo = () => {
     },
   });
 
-  const createTodo = async (values: { title: string; body: string }) => {};
+  const createTodo = async (values: { title: string; body: string }) => {
+    const updated=await fetch(`${ENDPOINT}`)
+  };
 
   return (
     <>
