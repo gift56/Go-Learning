@@ -18,9 +18,12 @@ const App = () => {
   const { data, mutate } = useSwR<Todo[]>("api/todos", fetcher);
 
   return (
-    <Box sx={(theme) => ({
-      
-    })}>
+    <Box
+      sx={(theme) => ({
+        padding: "2rem",
+        width: "2rem",
+      })}
+    >
       <List spacing="xs" size="sm" mb={12} center>
         {data?.map((todo) => (
           <List.Item key={`todo__${todo.id}`}>{todo.title}</List.Item>
