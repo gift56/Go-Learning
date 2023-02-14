@@ -16,9 +16,9 @@ const CreateTodo = () => {
   const createTodo = async (values: { title: string; body: string }) => {
     const updated = await fetch(`${ENDPOINT}/api/todos`, {
       method: "POST",
-      headers:{
-        
-      }
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
   };
 
