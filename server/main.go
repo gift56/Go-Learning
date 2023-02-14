@@ -8,7 +8,7 @@ import (
 )
 
 type Todo struct{
-	
+	ID int``
 }
 
 func main() {
