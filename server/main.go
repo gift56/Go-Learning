@@ -29,6 +29,7 @@ func main() {
 		todo.ID = len(todos) + 1
 
 		todos = append(todos, *todo)
+		return c.JSON(todos)
 	})
 	log.Fatal(app.Listen(":4000"))
 
