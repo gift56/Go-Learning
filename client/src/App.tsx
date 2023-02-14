@@ -39,6 +39,9 @@ const App = () => {
           <List.Item
             onClick={() => markAsDone(todo.id)}
             key={`todo__${todo.id}`}
+            sx={(theme) => ({
+              color: "white",
+            })}
             icon={
               todo.done ? (
                 <ThemeIcon color="teal" size={24} radius="xl">
