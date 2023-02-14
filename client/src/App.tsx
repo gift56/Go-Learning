@@ -22,6 +22,7 @@ const App = () => {
     const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
       method: "PATCH",
     }).then((res) => res.json());
+    mutate(updated);
   };
 
   return (
