@@ -1,6 +1,8 @@
+import { Box } from "@mantine/core"
+
 const App = () => {
   return (
-    <div>App</div>
+    <Box>Hello world</Box>
   )
 }
 
