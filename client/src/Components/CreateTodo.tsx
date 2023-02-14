@@ -21,6 +21,7 @@ const CreateTodo = () => {
       },
       body: JSON.stringify(values),
     }).then((res) => res.json());
+    form.reset();
   };
 
   return (
