@@ -28,8 +28,8 @@ const CreateTodo = () => {
           <Textarea
             required
             mb={12}
-            label="Todo"
-            placeholder="What do you want to do?"
+            label="body"
+            placeholder="tell me more..."
             {...form.getInputProps("title")}
           />
           <Button type="submit">Create Todo</Button>
