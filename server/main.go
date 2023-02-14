@@ -11,7 +11,7 @@ type Todo struct {
 	ID    int    `json:"id"`
 	Title string `json:"title"`
 	Done  bool   `json:"done"`
-	Body  string    `json:"body"`
+	Body  string `json:"body"`
 }
 
 func main() {
@@ -32,7 +32,10 @@ func main() {
 		return c.JSON(todos)
 	})
 	app.Patch("/api/todos/:id/done", func(c *fiber.Ctx) error {
-		id,err:=c.ParamsInt("id")
+		id, err := c.ParamsInt("id")
+if err:=nil{
+	return err
+}
 	})
 	log.Fatal(app.Listen(":4000"))
 
