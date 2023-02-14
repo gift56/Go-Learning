@@ -3,7 +3,7 @@ import { useForm } from "@mantine/form";
 import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core";
 import { ENDPOINT } from "../App";
 
-const CreateTodo = () => {
+const CreateTodo = ({mutate}) => {
   const [open, setOpen] = useState(false);
 
   const form = useForm({

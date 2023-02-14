@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <Box>
-      {JSON.stringify(data)} <CreateTodo />
+      {JSON.stringify(data)} <CreateTodo mutate={mutate} />
     </Box>
   );
 };
