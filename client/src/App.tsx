@@ -37,7 +37,7 @@ const App = () => {
                   <CheckCircleFillIcon size={20} />
                 </ThemeIcon>
               ) : (
-                <ThemeIcon color="teal" size={24} radius="xl">
+                <ThemeIcon color="gray" size={24} radius="xl">
                   <CheckCircleFillIcon size={20} />
                 </ThemeIcon>
               )
