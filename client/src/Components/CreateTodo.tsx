@@ -15,7 +15,7 @@ const CreateTodo = () => {
   return (
     <>
       <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo">
-        <form>
+        <form onSubmit={form.onSubmit(createTodo)}>
           <TextInput />
           <Textarea />
           <Button type="submit">Create Todo</Button>
