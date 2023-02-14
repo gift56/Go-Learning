@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <Box
-      sx={(theme) => ({
+      sx={() => ({
         padding: "2rem",
         width: "100%",
         maxWidth: "40rem",
