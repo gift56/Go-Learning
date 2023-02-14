@@ -26,10 +26,12 @@ const App = () => {
   };
 
   const deletTodo = async (id: number) => {
-    const updated = await fetch(`${ENDPOINT}/api/todos/${id}`, {
+    await fetch(`${ENDPOINT}/api/todos/${id}`, {
       method: "DELETE",
-    }).then((res) => res.json());
-    mutate(updated);
+    });
+    // Pass null as the second argument to indicate that the data is now empty.
+    const updated = data?.filter((todo) => todo.id !== id) || [];
+    mutate(`${ENDPOINT}/api/todos`, updated);
   };
 
   return (
@@ -43,38 +45,40 @@ const App = () => {
       })}
     >
       <List spacing="xs" size="sm" mb={12} center>
-        {data?.map((todo) => (
-          <>
-            <List.Item
-              onClick={() => markAsDone(todo.id)}
-              key={`todo__${todo.id}`}
-              sx={(theme) => ({
-                color: "white",
-              })}
-              icon={
-                todo.done ? (
-                  <ThemeIcon color="teal" size={24} radius="xl">
-                    <CheckCircleFillIcon size={20} />
-                  </ThemeIcon>
-                ) : (
-                  <ThemeIcon color="gray" size={24} radius="xl">
-                    <CheckCircleFillIcon size={20} />
-                  </ThemeIcon>
-                )
-              }
-            >
-              {todo.title}
-            </List.Item>
-            <ThemeIcon
-              onClick={() => deletTodo(todo.id)}
-              color="red"
-              size={24}
-              radius="xl"
-            >
-              <TrashIcon />
-            </ThemeIcon>
-          </>
-        ))}
+        {data &&
+          Array.isArray(data) &&
+          data?.map((todo) => (
+            <>
+              <List.Item
+                onClick={() => markAsDone(todo.id)}
+                key={`todo_item__${todo.id}`}
+                sx={(theme) => ({
+                  color: "white",
+                })}
+                icon={
+                  todo.done ? (
+                    <ThemeIcon color="teal" size={24} radius="xl">
+                      <CheckCircleFillIcon size={20} />
+                    </ThemeIcon>
+                  ) : (
+                    <ThemeIcon color="gray" size={24} radius="xl">
+                      <CheckCircleFillIcon size={20} />
+                    </ThemeIcon>
+                  )
+                }
+              >
+                {todo.title}
+              </List.Item>
+              <ThemeIcon
+                onClick={() => deletTodo(todo.id)}
+                color="red"
+                size={24}
+                radius="xl"
+              >
+                <TrashIcon />
+              </ThemeIcon>
+            </>
+          ))}
       </List>
       <CreateTodo mutate={mutate} />
     </Box>

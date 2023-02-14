@@ -4,7 +4,11 @@ import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core";
 import { ENDPOINT, Todo } from "../App";
 import { KeyedMutator } from "swr";
 
-const CreateTodo = ({ mutate }: { mutate: KeyedMutator<Todo[]> }) => {
+interface Props {
+  mutate: KeyedMutator<Todo[]> | ((data: Todo[]) => Todo[]);
+}
+
+const CreateTodo = ({ mutate }: Props) => {
   const [open, setOpen] = useState(false);
 
   const form = useForm({
