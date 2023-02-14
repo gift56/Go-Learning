@@ -21,6 +21,7 @@ const App = () => {
   const markAsDone = async (id: number) => {
     const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
       method: "PATCH",
+      
     }).then((res) => res.json());
     mutate(updated);
   };
