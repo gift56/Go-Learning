@@ -28,7 +28,7 @@ const CreateTodo = () => {
           <Textarea
             required
             mb={12}
-            label="body"
+            label="Body"
             placeholder="Tell me more..."
             {...form.getInputProps("body")}
           />
