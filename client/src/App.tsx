@@ -2,6 +2,13 @@ import { Box } from "@mantine/core";
 import useSwR from "swr";
 import CreateTodo from "./Components/CreateTodo";
 
+export interface Todo {
+  id: number;
+  title: string;
+  body: string;
+  done: boolean;
+}
+
 export const ENDPOINT = "http://localhost:4000";
 
 const fetcher = (url: string) =>
