@@ -31,7 +31,8 @@ const App = () => {
         padding: "2rem",
         width: "100%",
         maxWidth: "40rem",
-        margin: "0 auto",
+        margin: "4rem auto",
+        border:"1px solid white"
       })}
     >
       <List spacing="xs" size="sm" mb={12} center>

@@ -50,7 +50,11 @@ const CreateTodo = ({ mutate }: { mutate: KeyedMutator<Todo[]> }) => {
         </form>
       </Modal>
       <Group position="center">
-        <Button fullWidth mb={12} onClick={() => setOpen(true)}>
+        <Button
+          sx={() => ({ width: "90%" })}
+          mb={12}
+          onClick={() => setOpen(true)}
+        >
           Add Todo
         </Button>
       </Group>
