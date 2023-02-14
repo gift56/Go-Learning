@@ -12,7 +12,9 @@ const CreateTodo = () => {
     },
   });
 
-  const createTodo = async () => {};
+  const createTodo = async (values:{}) => {
+
+  };
 
   return (
     <>
