@@ -50,7 +50,6 @@ const App = () => {
               key={`todo__${todo.id}`}
               sx={(theme) => ({
                 color: "white",
-                background: "red",
               })}
               icon={
                 todo.done ? (
