@@ -18,6 +18,8 @@ const fetcher = (url: string) =>
 const App = () => {
   const { data, mutate } = useSwR<Todo[]>("api/todos", fetcher);
 
+  const markAsDone=async()=>{}
+
   return (
     <Box
       sx={(theme) => ({
