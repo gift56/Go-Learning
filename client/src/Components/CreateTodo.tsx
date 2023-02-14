@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
-import { Modal } from "@mantine/core";
+import { Modal, Group } from "@mantine/core";
 
 const CreateTodo = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +14,10 @@ const CreateTodo = () => {
 
   return (
     <>
-      <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo"></Modal>
+      <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo">
+        Form
+      </Modal>
+      <Group></Group>
     </>
   );
 };
