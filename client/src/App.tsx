@@ -19,7 +19,10 @@ const App = () => {
 
   return (
     <Box>
-      {JSON.stringify(data)} <CreateTodo mutate={mutate} />
+      {data?.map((todo)=>(
+        <List.Item></List.Item>
+      ))}
+       <CreateTodo mutate={mutate} />
     </Box>
   );
 };
