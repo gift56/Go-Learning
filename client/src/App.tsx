@@ -21,7 +21,9 @@ const App = () => {
     <Box
       sx={(theme) => ({
         padding: "2rem",
-        width: "2rem",
+        width: "100%",
+        maxWidth: "40rem",
+        margin: "0 auto",
       })}
     >
       <List spacing="xs" size="sm" mb={12} center>
