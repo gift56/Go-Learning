@@ -21,7 +21,9 @@ func main() {
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
 		return c.SendString("OK")
 	})
-	app.Post("/api/todos")
+	app.Post("/api/todos",func(c *fiber.Ctx) error {
+		
+	})
 	log.Fatal(app.Listen(":4000"))
 
 }
