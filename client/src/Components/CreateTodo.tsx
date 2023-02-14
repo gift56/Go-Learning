@@ -12,6 +12,8 @@ const CreateTodo = () => {
     },
   });
 
+  const createTodo = () => {};
+
   return (
     <>
       <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo">
