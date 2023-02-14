@@ -18,7 +18,7 @@ const CreateTodo = () => {
         <form>
           <TextInput />
           <Textarea />
-          <Button>Create Todo</Button>
+          <Button type="submit">Create Todo</Button>
         </form>
       </Modal>
       <Group position="center">
