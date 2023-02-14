@@ -18,7 +18,7 @@ const CreateTodo = () => {
         Form
       </Modal>
       <Group position="center">
-        <Button fullWidth>Add Todo</Button>
+        <Button fullWidth md={12}>Add Todo</Button>
       </Group>
     </>
   );
