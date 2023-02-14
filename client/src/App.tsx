@@ -19,9 +19,9 @@ const App = () => {
 
   return (
     <Box>
-      <List>
+      <List spacing="xs" size="sm" mb={12} center>
         {data?.map((todo) => (
-          <List.Item></List.Item>
+          <List.Item>{todo.title}</List.Item>
         ))}
       </List>
       <CreateTodo mutate={mutate} />
