@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("Hello world")
 	app := fiber.New()
 	app.Use(cors.New(cors.Config{
-		
+		AllowOrigins: "",
 	}))
 	todos := []Todo{}
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
