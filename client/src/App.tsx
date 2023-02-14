@@ -7,7 +7,7 @@ const fetcher = (url: string) =>
   fetch(`${ENDPOINT}/${url}`).then((res) => res.json());
 
 const App = () => {
-  const {} = useSwR();
+  const {} = useSwR('/api/todos', fetcher);
   return <Box>Hello world</Box>;
 };
 
