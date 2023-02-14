@@ -22,7 +22,7 @@ const CreateTodo = ({ mutate }: KeyedMutator<Todo[]>) => {
       body: JSON.stringify(values),
     }).then((res) => res.json());
 
-    mutate()
+    mutate(updated)
     form.reset();
     setOpen(false);
   };
