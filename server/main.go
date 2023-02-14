@@ -31,7 +31,7 @@ func main() {
 		todos = append(todos, *todo)
 		return c.JSON(todos)
 	})
-	app.Patch("/api/todos/:id/done")
+	app.Patch("/api/todos/:id/done", func(c *fiber.Ctx) error {})
 	log.Fatal(app.Listen(":4000"))
 
 }
