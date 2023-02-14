@@ -23,9 +23,15 @@ const CreateTodo = () => {
             mb={12}
             label="Todo"
             placeholder="What do you want to do?"
-            {...form.getInputProps}
+            {...form.getInputProps("title")}
           />
-          <Textarea />
+          <Textarea
+            required
+            mb={12}
+            label="Todo"
+            placeholder="What do you want to do?"
+            {...form.getInputProps("title")}
+          />
           <Button type="submit">Create Todo</Button>
         </form>
       </Modal>
