@@ -1,9 +1,8 @@
-import { Box } from "@mantine/core"
+import { Box } from "@mantine/core";
+import useSwR from "swr";
 
 const App = () => {
-  return (
-    <Box>Hello world</Box>
-  )
-}
+  return <Box>Hello world</Box>;
+};
 
-export default App
+export default App;
