@@ -20,6 +20,7 @@ func main() {
 	app := fiber.New()
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: "http://localhost:5174",
+		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 	todos := []Todo{}
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
