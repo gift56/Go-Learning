@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
 import { Modal, Group, Button, TextInput, Textarea } from "@mantine/core";
-import { ENDPOINT } from "../App";
+import { ENDPOINT, Todo } from "../App";
 
-const CreateTodo = ({ mutate }: KeyedMutator<any>) => {
+const CreateTodo = ({ mutate }: KeyedMutator<Todo[]>) => {
   const [open, setOpen] = useState(false);
 
   const form = useForm({
