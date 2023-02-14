@@ -25,6 +25,13 @@ const App = () => {
     mutate(updated);
   };
 
+  const deletTodo = async (id: number) => {
+    const updated = await fetch(`${ENDPOINT}/api/todos/${id}`, {
+      method: "DELETE",
+    }).then((res) => res.json());
+    mutate(updated);
+  };
+
   return (
     <Box
       sx={(theme) => ({
@@ -37,26 +44,37 @@ const App = () => {
     >
       <List spacing="xs" size="sm" mb={12} center>
         {data?.map((todo) => (
-          <List.Item
-            onClick={() => markAsDone(todo.id)}
-            key={`todo__${todo.id}`}
-            sx={(theme) => ({
-              color: "white",
-            })}
-            icon={
-              todo.done ? (
-                <ThemeIcon color="teal" size={24} radius="xl">
-                  <CheckCircleFillIcon size={20} />
-                </ThemeIcon>
-              ) : (
-                <ThemeIcon color="gray" size={24} radius="xl">
-                  <CheckCircleFillIcon size={20} />
-                </ThemeIcon>
-              )
-            }
-          >
-            {todo.title}
-          </List.Item>
+          <>
+            <List.Item
+              onClick={() => markAsDone(todo.id)}
+              key={`todo__${todo.id}`}
+              sx={(theme) => ({
+                color: "white",
+                background: "red",
+              })}
+              icon={
+                todo.done ? (
+                  <ThemeIcon color="teal" size={24} radius="xl">
+                    <CheckCircleFillIcon size={20} />
+                  </ThemeIcon>
+                ) : (
+                  <ThemeIcon color="gray" size={24} radius="xl">
+                    <CheckCircleFillIcon size={20} />
+                  </ThemeIcon>
+                )
+              }
+            >
+              {todo.title}
+            </List.Item>
+            <ThemeIcon
+              onClick={() => deletTodo(todo.id)}
+              color="red"
+              size={24}
+              radius="xl"
+            >
+              <TrashIcon />
+            </ThemeIcon>
+          </>
         ))}
       </List>
       <CreateTodo mutate={mutate} />
