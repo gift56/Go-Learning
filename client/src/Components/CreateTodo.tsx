@@ -18,7 +18,7 @@ const CreateTodo = () => {
         Form
       </Modal>
       <Group position="center">
-        <Button fullWidth md={12} onClick={() => setOpen(true)}>
+        <Button fullWidth mb={12} onClick={() => setOpen(true)}>
           Add Todo
         </Button>
       </Group>
