@@ -12,7 +12,11 @@ const CreateTodo = () => {
     },
   });
 
-  return <div>CreateTodo</div>;
+  return (
+    <>
+      <Modal opened={open} onClose={() => setOpen(false)} title="Create Todo"></Modal>
+    </>
+  );
 };
 
 export default CreateTodo;
