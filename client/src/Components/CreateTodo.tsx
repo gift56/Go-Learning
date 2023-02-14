@@ -29,8 +29,8 @@ const CreateTodo = () => {
             required
             mb={12}
             label="body"
-            placeholder="tell me more..."
-            {...form.getInputProps("title")}
+            placeholder="Tell me more..."
+            {...form.getInputProps("body")}
           />
           <Button type="submit">Create Todo</Button>
         </form>
