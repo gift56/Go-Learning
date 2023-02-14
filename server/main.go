@@ -23,6 +23,7 @@ func main() {
 	})
 	app.Post("/api/todos", func(c *fiber.Ctx) error {
 		todo := &Todo{}
+		c.BodyParser(todo);
 	})
 	log.Fatal(app.Listen(":4000"))
 
