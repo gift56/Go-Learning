@@ -37,6 +37,7 @@ const App = () => {
       <List spacing="xs" size="sm" mb={12} center>
         {data?.map((todo) => (
           <List.Item
+            onClick={() => markAsDone(todo.id)}
             key={`todo__${todo.id}`}
             icon={
               todo.done ? (
