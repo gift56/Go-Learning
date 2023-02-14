@@ -1,7 +1,7 @@
 import { Box } from "@mantine/core";
 import useSwR from "swr";
 
-export const ENDPOINT=""
+export const ENDPOINT="http://localhost:4000"
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
