@@ -44,7 +44,17 @@ const App = () => {
         border: "1px solid white",
       })}
     >
-      <List spacing="xs" size="sm" mb={12} center>
+      <List
+        sx={() => ({
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        })}
+        spacing="xs"
+        size="sm"
+        mb={12}
+        center
+      >
         {data &&
           Array.isArray(data) &&
           data?.map((todo) => (
@@ -52,8 +62,9 @@ const App = () => {
               <List.Item
                 onClick={() => markAsDone(todo.id)}
                 key={`todo_item__${todo.id}`}
-                sx={(theme) => ({
+                sx={() => ({
                   color: "white",
+                  cursor: "pointer",
                 })}
                 icon={
                   todo.done ? (
@@ -74,6 +85,9 @@ const App = () => {
                 color="red"
                 size={24}
                 radius="xl"
+                sx={() => ({
+                  cursor: "pointer",
+                })}
               >
                 <TrashIcon />
               </ThemeIcon>
