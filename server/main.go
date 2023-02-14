@@ -31,6 +31,7 @@ func main() {
 		todos = append(todos, *todo)
 		return c.JSON(todos)
 	})
+	app.Patch("/api/todos/:id/done")
 	log.Fatal(app.Listen(":4000"))
 
 }
