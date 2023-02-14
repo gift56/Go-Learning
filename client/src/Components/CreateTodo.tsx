@@ -1,7 +1,8 @@
-const CreateTodo = () => {
-  return (
-    <div>CreateTodo</div>
-  )
-}
+import { useState } from "react";
 
-export default CreateTodo
+const CreateTodo = () => {
+  const [open, setOpen] = useState(false);
+  return <div>CreateTodo</div>;
+};
+
+export default CreateTodo;
