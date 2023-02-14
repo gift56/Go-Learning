@@ -1,4 +1,4 @@
-import { Box, List,ThemeIcon } from "@mantine/core";
+import { Box, List, ThemeIcon } from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import useSwR from "swr";
 import CreateTodo from "./Components/CreateTodo";
@@ -29,11 +29,20 @@ const App = () => {
     >
       <List spacing="xs" size="sm" mb={12} center>
         {data?.map((todo) => (
-          <List.Item key={`todo__${todo.id}`} icon={
-            todo.done?(<ThemeIcon color="teal" size={24} radius="xl">
-              <CheckCircleFillIcon size={20}/>
-            </ThemeIcon>):()
-          }>
+          <List.Item
+            key={`todo__${todo.id}`}
+            icon={
+              todo.done ? (
+                <ThemeIcon color="teal" size={24} radius="xl">
+                  <CheckCircleFillIcon size={20} />
+                </ThemeIcon>
+              ) : (
+                <ThemeIcon color="teal" size={24} radius="xl">
+                  <CheckCircleFillIcon size={20} />
+                </ThemeIcon>
+              )
+            }
+          >
             {todo.title}
           </List.Item>
         ))}
