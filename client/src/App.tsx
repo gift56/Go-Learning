@@ -7,9 +7,9 @@ const fetcher = (url: string) =>
   fetch(`${ENDPOINT}/${url}`).then((res) => res.json());
 
 const App = () => {
-  const {data,mutate} = useSwR('/api/todos', fetcher);
+  const { data, mutate } = useSwR("/api/todos", fetcher);
 
-  return <Box>Hello world</Box>;
+  return <Box>{JSON.stringify(data)}</Box>;
 };
 
 export default App;
