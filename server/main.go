@@ -7,6 +7,10 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+type Todo struct{
+	
+}
+
 func main() {
 	fmt.Println("Hello world")
 	app:=fiber.New()
