@@ -28,7 +28,11 @@ const App = () => {
     >
       <List spacing="xs" size="sm" mb={12} center>
         {data?.map((todo) => (
-          <List.Item key={`todo__${todo.id}`}>{todo.title}</List.Item>
+          <List.Item key={`todo__${todo.id}`} icon={
+            todo.done
+          }>
+            {todo.title}
+          </List.Item>
         ))}
       </List>
       <CreateTodo mutate={mutate} />
