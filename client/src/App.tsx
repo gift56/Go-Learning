@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core";
+import { Box, List } from "@mantine/core";
 import useSwR from "swr";
 import CreateTodo from "./Components/CreateTodo";
 
@@ -19,10 +19,12 @@ const App = () => {
 
   return (
     <Box>
-      {data?.map((todo)=>(
-        <List.Item></List.Item>
-      ))}
-       <CreateTodo mutate={mutate} />
+      <List>
+        {data?.map((todo) => (
+          <List.Item></List.Item>
+        ))}
+      </List>
+      <CreateTodo mutate={mutate} />
     </Box>
   );
 };
