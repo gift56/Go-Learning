@@ -1,5 +1,5 @@
 import { Box, List, ThemeIcon } from "@mantine/core";
-import { CheckCircleFillIcon } from "@primer/octicons-react";
+import { CheckCircleFillIcon, TrashIcon } from "@primer/octicons-react";
 import useSwR from "swr";
 import CreateTodo from "./Components/CreateTodo";
 
@@ -32,7 +32,7 @@ const App = () => {
         width: "100%",
         maxWidth: "40rem",
         margin: "4rem auto",
-        border:"1px solid white"
+        border: "1px solid white",
       })}
     >
       <List spacing="xs" size="sm" mb={12} center>
