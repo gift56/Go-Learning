@@ -17,6 +17,7 @@ type Todo struct {
 func main() {
 	fmt.Println("Hello world")
 	app := fiber.New()
+	todos:=[]Todo{}
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
 		return c.SendString("OK")
 	})
