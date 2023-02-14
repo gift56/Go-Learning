@@ -26,6 +26,7 @@ func main() {
 		if err := c.BodyParser(todo); err != nil {
 			return err
 		}
+		todo.ID = len(todos)+1
 	})
 	log.Fatal(app.Listen(":4000"))
 
